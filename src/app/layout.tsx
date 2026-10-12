@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {Navbar} from "./Navbar.tsx";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
@@ -13,7 +14,10 @@ const body = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navbar/>
+        {children}
+      </body>
     </html>
   );
 }
