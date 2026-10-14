@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {Navbar} from "./Navbar.tsx";
+import {Navbar} from "./Navbar";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
