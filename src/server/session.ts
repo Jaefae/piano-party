@@ -1,8 +1,12 @@
 import { cookies } from "next/headers";
-import { getSession } from "./auth";
+import { getSession} from "./auth";
 
-export async function getCurrentUser() {
+export async function getCurrentUserId() : Promise<string | null> {
   const token = (await cookies()).get("session")?.value;
   if (!token) return null;
-  return await getSession(token);
+
+  const session = await getSession(token);
+  if (!session) return null;
+
+  return session.userId;
 }
