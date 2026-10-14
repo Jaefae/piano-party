@@ -19,7 +19,11 @@ npm install
 ### Database container
 The database can be set up using the provided docker compose command.
 
-Use the provided credentials or update the docker container with your own.
+First, open docker desktop.
+
+The docker container uses .env.local for the host username, port, password, and database.
+
+Use the provided credentials or update the docker compose command and .env.local with your own.
 
 ```bash
 mv .env.local.EXAMPLE .env.local
