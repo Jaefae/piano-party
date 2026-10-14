@@ -42,6 +42,8 @@ pnpm dev
 # or
 bun dev
 ```
+
+The website will be viewable at [http://localhost:3000/](http://localhost:3000/).
 ### Manual Installation
 
 #### Setting up the database on your machine.
