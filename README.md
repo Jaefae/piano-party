@@ -12,8 +12,8 @@ Piano Party is a Next.js based webapp that gamifies learning sheet music by allo
 
 ## Getting Started
 
-1) Set up the database on your machine.
-- Install PostgreSQL
+### Set up the database on your machine.
+Install PostgreSQL
 ```bash
 sudo apt update
 sudo apt install postgresql
@@ -21,7 +21,7 @@ sudo service postgresql start
 ```
 The last line must be re-run each time you restart your session.
 
-- Create the database
+Create the database
 ```bash
 sudo -u postgres psql
 ```
@@ -32,26 +32,25 @@ CREATE DATABASE ppdb;
 ```
 You can use any password or database name you want, but they must match with the next step
 
-- Set the connection string
-Create a file named `.env.local` in the project root (it is gitignored, do not commit it):
+Set the connection string by creating a file named `.env.local` in the project root (it is gitignored, do not commit it):
 eg.
 ```
 DATABASE_URL=postgres://postgres:password@localhost:5432/ppdb
 ```
 Format: `postgres://USER:PASSWORD@HOST:PORT/DATABASE`
 
-2) Create tables and load test data
+### Create tables and load test data
 ```bash
 npm run db:reset
 ```
 This will wipe the current database and rebuild from `server/db/schema.sql`, then load test data from `server/db/seed.sql`
 
-3) Install dependencies
+### Install dependencies
 ```bash
 npm install
 ```
 
-4) Run the development server:
+### Run the development server:
 
 ```bash
 npm run dev
