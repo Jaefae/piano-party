@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-body), sans-serif;
-  background: radial-gradient(circle at 50% 40%, #2a2a2a, #1a1a1a 70%);
+  background: radial-gradient(circle at 50% 40%, #a2a2ff, #f2f2f2 70%);
 }
 
 main {
@@ -18,5 +18,5 @@ main {
 
 p, h1 {
     padding: 5px;
-    color: #f2f2f2;
+    color: #1b1b1b;
 }
