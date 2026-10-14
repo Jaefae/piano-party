@@ -2,15 +2,17 @@ DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
 CREATE TABLE Users (
-    id SERIAL PRIMARY KEY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     username TEXT UNIQUE NOT NULL,
-    passwordHash TEXT NOT NULL,
-    isAdmin BOOLEAN NOT NULL DEFAULT FALSE
+    password_hash TEXT NOT NULL,
+    is_admin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE Sessions (
-    token TEXT PRIMARY KEY,
-    userId INT NOT NULL REFERENCES Users(id) ON DELETE CASCADE
+    token TEXT PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL REFERENCES Users(id) ON DELETE CASCADE,
+    time_created TIMESTAMPTZ NOT NULL DEFAULT now(),
+    time_expires TIMESTAMPTZ NOT NULL DEFAULT now() + INTERVAL '7 days'
 );
 
 CREATE TABLE Songs (
